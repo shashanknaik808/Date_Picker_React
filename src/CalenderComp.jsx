@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function CalenderComp() {
+
+    const [calendar, setCalender] = useState('');
+    const [open, setOpen] = useState(false);
+
+    function handleSelect(date) {
+        console.log(date);
+        console.log(format(date, 'dd/MM/yyyy'));
+        setCalender(format(date, 'dd/MM/yyyy'));
+    }
+
     return (
-        
+
         <div style={{ 'textAlign': 'center' }}>
             <TextField
                 label="Select Date"
