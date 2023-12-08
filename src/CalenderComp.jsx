@@ -25,6 +25,13 @@ function CalenderComp() {
         }
     }
 
+    useEffect(() => {
+        setCalender(format(new Date(), 'dd/MM/yyyy'));
+        document.addEventListener("keydown", hideOnEscape, true);
+        document.addEventListener("click", hideOnClickOutside, true);
+
+    }, [])
+
     return (
 
         <div style={{ 'textAlign': 'center' }}>
