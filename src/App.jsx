@@ -3,6 +3,7 @@ import { Chip, Divider } from '@mui/material';
 import CalenderComp from './components/CalenderComp';
 import DateRangeComp from './components/DateRangeComp';
 import DateRangePickerComp from './components/DateRangePickerComp';
+import MUIDateRange from './components/MUIDateRange';
 
 function App() {
   return (
@@ -24,6 +25,12 @@ function App() {
       </Divider>
 
       <DateRangePickerComp />
+
+      <Divider>
+        <Chip label="MUI Date Range Picker" />
+      </Divider>
+
+      <MUIDateRange />
     </>
   );
 }
