@@ -18,6 +18,12 @@ function DateRangeComp() {
         }
     }
 
+    function hideOnClickOutside(e) {
+        if (refOne.current && !refOne.current.contains(e.target)) {
+            setOpen(false);
+        }
+    }
+
     return (
         <div>DateRangeComp</div>
     );
