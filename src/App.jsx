@@ -1,37 +1,46 @@
+import React from 'react';
 import './App.css';
-import { Chip, Divider } from '@mui/material';
+import { Chip, Divider, ThemeProvider, createTheme } from '@mui/material';
 import CalenderComp from './components/CalenderComp';
 import DateRangeComp from './components/DateRangeComp';
 import DateRangePickerComp from './components/DateRangePickerComp';
 import MUIDateRange from './components/MUIDateRange';
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
 function App() {
   return (
-    <>
-      <Divider>
-        <Chip label="Calender" />
-      </Divider>
+    <ThemeProvider theme={darkTheme}>
+      <>
+        <Divider>
+          <Chip label="Calender" />
+        </Divider>
 
-      <CalenderComp />
+        <CalenderComp />
 
-      <Divider>
-        <Chip label="Date Range" />
-      </Divider>
+        <Divider>
+          <Chip label="Date Range" />
+        </Divider>
 
-      <DateRangeComp />
+        <DateRangeComp />
 
-      <Divider>
-        <Chip label="Data Range Picker" />
-      </Divider>
+        <Divider>
+          <Chip label="Data Range Picker" />
+        </Divider>
 
-      <DateRangePickerComp />
+        <DateRangePickerComp />
 
-      <Divider>
-        <Chip label="MUI Date Range Picker" />
-      </Divider>
+        <Divider>
+          <Chip label="MUI Date Range Picker" />
+        </Divider>
 
-      <MUIDateRange />
-    </>
+        <MUIDateRange />
+      </>
+    </ThemeProvider>
   );
 }
 
