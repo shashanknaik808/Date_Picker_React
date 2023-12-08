@@ -19,6 +19,12 @@ function CalenderComp() {
         }
     }
 
+    function hideOnClickOutside(e) {
+        if (refOne.current && !refOne.current.contains(e.target)) {
+            setOpen(false);
+        }
+    }
+
     return (
 
         <div style={{ 'textAlign': 'center' }}>
