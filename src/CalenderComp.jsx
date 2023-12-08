@@ -11,6 +11,14 @@ function CalenderComp() {
         setCalender(format(date, 'dd/MM/yyyy'));
     }
 
+    const refOne = useRef(null);
+
+    function hideOnEscape(e) {
+        if (e.key === 'Escape') {
+            setOpen(false);
+        }
+    }
+
     return (
 
         <div style={{ 'textAlign': 'center' }}>
