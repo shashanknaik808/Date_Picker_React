@@ -31,7 +31,28 @@ function DateRangePickerComp() {
     }, []);
 
     return (
-        <div>DateRangePickerComp</div>
+        <div style={{ 'textAlign': 'center' }}>
+            <TextField
+                label="Select Date"
+                name="date"
+                variant='outlined'
+                value={`${format(range[0].startDate, 'dd/MM/yyyy')} -to- ${format(range[0].endDate, 'dd/MM/yyyy')}`}
+                onClick={() => setOpen(open => !open)}
+            />
+            <br />
+
+            <div ref={refOne}>
+                {open &&
+                    <DateRangePicker
+                        editableDateInputs={true}
+                        onChange={item => setRange([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        ranges={range}
+                        months={2}
+                        direction='horizontal'
+                    />}
+            </div>
+        </div>
     )
 }
 
