@@ -11,6 +11,12 @@ function DateRangePickerComp() {
     const [open, setOpen] = useState(false);
     const refOne = useRef(null);
 
+    function hideOnEscape(e) {
+        if (e.key === 'Escape') {
+            setOpen(false);
+        }
+    }
+
     return (
         <div>DateRangePickerComp</div>
     )
