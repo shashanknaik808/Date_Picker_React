@@ -23,6 +23,13 @@ function DateRangePickerComp() {
         }
     }
 
+    useEffect(() => {
+        document.addEventListener("keydown",
+            hideOnEscape, true);
+        document.addEventListener("click",
+            hideOnClickOutside, true);
+    }, []);
+
     return (
         <div>DateRangePickerComp</div>
     )
