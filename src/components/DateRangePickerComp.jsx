@@ -17,6 +17,12 @@ function DateRangePickerComp() {
         }
     }
 
+    function hideOnClickOutside(e) {
+        if (refOne.current && !refOne.current.contains(e.target)) {
+            setOpen(false);
+        }
+    }
+
     return (
         <div>DateRangePickerComp</div>
     )
