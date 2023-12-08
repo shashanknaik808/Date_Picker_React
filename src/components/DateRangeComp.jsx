@@ -1,5 +1,5 @@
 import { addDays } from 'date-fns';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function DateRangeComp() {
 
@@ -23,6 +23,11 @@ function DateRangeComp() {
             setOpen(false);
         }
     }
+
+    useEffect(() => {
+        document.addEventListener("keydown", hideOnEscape, true);
+        document.addEventListener("click", hideOnClickOutside, true);
+    }, [])
 
     return (
         <div>DateRangeComp</div>
